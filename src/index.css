@@ -2,9 +2,19 @@
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.mainview{
+  display: flex;
+  flex-direction: column;
+}
+
+.demoDataButton {
+  position: absolute;
+  top: 10px;
+  left: 10px;
 }
