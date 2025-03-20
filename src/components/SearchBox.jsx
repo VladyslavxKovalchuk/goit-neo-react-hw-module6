@@ -1,8 +1,15 @@
 import { useId } from "react";
 import styles from "./css/SearchBox.module.css";
+import { useDispatch, useSelector } from "react-redux";
+import { selectNameFilter, changeFilter } from "../state/filtersSlice";
 
-const SearchBox = ({ value, handleChange }) => {
+const SearchBox = () => {
   const searchBoxId = useId();
+  const dispatch = useDispatch();
+  const handleChange = (value) => {
+    dispatch(changeFilter(value));
+  };
+  const searchQuery = useSelector(selectNameFilter);
 
   return (
     <div className={styles.searchCard}>
@@ -11,10 +18,9 @@ const SearchBox = ({ value, handleChange }) => {
         id={searchBoxId}
         className={styles.searchInput}
         type="search"
-        value={value}
+        value={searchQuery}
         onChange={(event) => {
-          const newValue = event.target.value.trim().toLowerCase();
-          handleChange(newValue);
+          handleChange(event.target.value.trim().toLowerCase());
         }}
       />
     </div>
