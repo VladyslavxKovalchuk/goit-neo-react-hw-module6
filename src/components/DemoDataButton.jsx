@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { addContact } from "../state/contactsSlice.js";
+import { addContact } from "../redux/contactsSlice.js";
 
 const DemoDataButton = () => {
   const dispatch = useDispatch();

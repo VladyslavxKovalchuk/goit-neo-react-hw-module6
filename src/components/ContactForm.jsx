@@ -2,7 +2,7 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { nanoid } from "nanoid";
 import { useDispatch } from "react-redux";
-import { addContact } from "../state/contactsSlice.js";
+import { addContact } from "../redux/contactsSlice.js";
 import styles from "./css/ContactForm.module.css";
 
 const phoneValidationRegExp = /^[\d+\-()]{1,10}$/g;
